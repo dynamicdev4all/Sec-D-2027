@@ -1,0 +1,22 @@
+Print numbers from 1 to 100.
+
+Print the multiplication table of a number.
+
+Calculate the sum of first N natural numbers.
+
+Find the factorial of a number.
+
+Reverse the digits of a number (e.g., 123 → 321).
+
+Check if a number is prime.
+
+Print all even numbers between 1 and 50.
+
+Find the sum of digits of a number.
+
+Write a program to check if a number is a palindrome (e.g., 121 → Yes, 123 → No).
+
+Find the sum of all odd numbers from 1 to N.
+
+Write a program to print all Armstrong numbers between 1 and 1000.
+(Armstrong number: sum of cubes of digits = number itself)
