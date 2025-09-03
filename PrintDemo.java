@@ -9,12 +9,6 @@ public class PrintDemo {
         PrintStream out = new PrintStream("F:\\RDEC-JAVA-2027\\SEC-D\\temp.txt");
         out.println("This is without System Class");
 
-
-        System.out.print("Rohit");
-        System.out.print(45);
-        System.out.print(true);
-        System.out.println();
-
-        System.setIn(null);
     }
 }
+
