@@ -1,0 +1,28 @@
+Write a Java program to check if a number is positive, negative, or zero.
+
+Take a year as input and check if it is a leap year.
+
+Write a program to find the largest of three numbers using if-else.
+
+Take a character as input and check if it is a vowel or consonant.
+
+A shop gives a discount of 10% if the purchase amount is more than ₹1000. Write a program to calculate the total bill.
+
+
+Write a program to check if a person is eligible to vote (age ≥ 18).
+
+Take marks of 3 subjects and calculate percentage. Print the grade according to the percentage:
+
+≥ 90 → A
+
+≥ 75 → B
+
+≥ 50 → C
+
+< 50 → Fail
+
+Write a program that reads a number from 1–7 and prints the day of the week using switch.
+
+Write a program to check whether a given year is a century year.
+
+Write a program to find whether a given character is a digit, letter, or special character.
