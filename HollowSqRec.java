@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class HollowSqRec {
+    static int rowCount;
+    static int colCount;
 
     static void printStar(int starCount, int row) {
         if (starCount <= 0) {
             return;
         }
-        if (row == 1 || row == 5 || starCount == 5 || starCount == 1) {
+        if (row == 1 || row == rowCount || starCount == colCount || starCount == 1) {
             System.out.print("*");
         } else {
             System.out.print(" ");
@@ -23,6 +27,11 @@ public class HollowSqRec {
     }
 
     public static void main(String[] args) {
-        HollowSqRec.printHollowSq(5, 5);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter rows");
+        rowCount = sc.nextInt();
+        System.out.println("Please enter col");
+        colCount = sc.nextInt();
+        HollowSqRec.printHollowSq(rowCount, colCount);
     }
 }
