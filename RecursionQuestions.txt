@@ -1,0 +1,38 @@
+Sum of Natural Numbers
+Write a recursive method to calculate the sum of the first n natural numbers.
+Example: sum(5) = 5 + 4 + 3 + 2 + 1 = 15.
+
+Power of a Number
+Write a recursive method to compute x^n (x raised to the power n).
+Example: pow(2, 3) = 8.
+
+Print Numbers in Ascending Order
+Write a recursive method to print numbers from 1 to n.
+Example: for n=5, output: 1 2 3 4 5.
+
+Print Numbers in Descending Order
+Write a recursive method to print numbers from n to 1.
+Example: for n=5, output: 5 4 3 2 1.
+
+Fibonacci Series (Nth Term)
+Write a recursive method to return the nth Fibonacci number.
+Example: fib(6) = 8.
+
+Reverse a String
+Write a recursive method to reverse a string.
+Example: reverse("JAVA") = "AVAJ".
+
+Find Maximum Element in Array
+Using recursion, find the maximum element of an integer array.
+
+Count Digits of a Number
+Write a recursive method to count the number of digits in an integer.
+Example: countDigits(12345) = 5.
+
+Sum of Digits of a Number
+Write a recursive method to find the sum of digits of an integer.
+Example: sumDigits(123) = 6.
+
+Check Palindrome (String or Number)
+Write a recursive method to check if a string or number is palindrome.
+Example: isPalindrome("madam") = true.
