@@ -43,13 +43,27 @@ public class DatabaseConnection {
 		
 	}
 	
-	public static void verifyUser(String email, int phone) {
-		Document user = c.find(new Document("userEmail", email)).first();
-		if(user != null) {
-			boolean status = Boolean.parseBoolean(user.getString("isVerified"));
-			System.out.println();
+	public static boolean verifyUser(String email) {
+		try {
+			Document user = c.find(new Document("userEmail", email)).first(); // this code is used to find the user by their email add
+			if(user != null) {
+				Document updatedUser = new Document("$set", new Document("isVerified", true)); // then here we are updating the "isVerified" field from false to true
+				c.findOneAndUpdate(user, updatedUser); // now here we are again updating the entire document in the db
+				return true;
+			}else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
 		}
-	
 	}
 	
+	
+	public static Document loginUser(String email) {
+		Document user = c.find(new Document("userEmail", email)).first();
+		if(user != null) {
+			return user;
+		}
+		return null;
+	}
 }

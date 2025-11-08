@@ -15,7 +15,7 @@ public class EmailOTP {
 	
 	public static boolean sendRegisterOTP(String to, String userName, int OTP) {
 		String senderEmail =  "piebytwo014@gmail.com";
-		String senderPassword = "ucnfskiczlmgsrpo";
+		String senderPassword = "rdbtfijgoidwgvqj";
 		
 		Properties emailProperties = new Properties();
 		emailProperties.put("mail.smtp.host", "smtp.gmail.com");

@@ -46,7 +46,6 @@ public class RegisterServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("sentOTP_key", O);
 				session.setAttribute("userEmail", email);
-				session.setAttribute("userPhone", mobileNum);
 				response.sendRedirect("verify_otp_page.jsp");
 			}else {
 				System.out.println("OTP sent failed");

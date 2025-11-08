@@ -38,7 +38,7 @@ public class VerifyOTPServlet extends HttpServlet {
 		String userPhone =(String)(session.getAttribute("userPhone"));
 		
 		if(Integer.parseInt(enteredOTP)== sentOTP) {
-			DatabaseConnection.verifyUser(userEmail, Integer.parseInt(userPhone));
+			DatabaseConnection.verifyUser(userEmail);
 		}else {
 			System.out.println("OTP verification failed");
 		}

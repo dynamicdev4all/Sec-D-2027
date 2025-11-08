@@ -1,13 +1,16 @@
 package com.rdec.servlets;
 
+import java.io.IOException;
+
+import com.rdec.database.DatabaseConnection;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
-import java.io.IOException;
+import shadow.org.bson.Document;
 
 /**
  * Servlet implementation class LoginServlet
@@ -30,19 +33,23 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email_key");
 		String password = request.getParameter("password_key");
-		System.out.println("Your email Address is : " + email);
-		System.out.println("Your Password is :" + password);
 		
-		//this is just for learning purpose, this code will be updated as soon as we are done with database implement
-		
-		if(email.equals("admin@rdec.in")&& password.equals("123456")) {
-//			response.sendRedirect("home_page.html");
-			HttpSession session = request.getSession();
-			session.setAttribute("userName", "Deepak");
-			response.sendRedirect("home.jsp");
+		Document loginUser = DatabaseConnection.loginUser(email);
+		if(loginUser != null) {
+			if(email.equals(loginUser.getString("userEmail")) && password.equals(loginUser.getString("userPassword")) && loginUser.getBoolean("isVerified")) {
+				HttpSession session = request.getSession();
+				String userName = loginUser.getString("firstName") + " " +  loginUser.getString("lastName");
+				session.setAttribute("userName", userName);
+				response.sendRedirect("home.jsp");
+			}else if(email.equals(loginUser.getString("userEmail")) && password.equals(loginUser.getString("userPassword")) && !loginUser.getBoolean("isVerified")) {
+				System.out.println("The account is not verified, please retry");
+			}
+			else {
+				System.out.println("Password is invalid");
+			}
 		}else {
-			System.out.println("Email or password is invalid");
-		}
+			System.out.println("No Account Found");
+		}		
 	}
 
 	/**
