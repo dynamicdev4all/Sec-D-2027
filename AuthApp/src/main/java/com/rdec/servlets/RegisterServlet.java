@@ -2,6 +2,7 @@ package com.rdec.servlets;
 
 import java.io.IOException;
 
+import com.rdec.config.SecretReader;
 import com.rdec.database.DatabaseConnection;
 import com.rdec.helper.EmailOTP;
 
@@ -49,6 +50,7 @@ public class RegisterServlet extends HttpServlet {
 				response.sendRedirect("verify_otp_page.jsp");
 			}else {
 				System.out.println("OTP sent failed");
+				System.out.println(SecretReader.readSecrets("ERROR", "hi", "IN"));
 			}
 		}else {
 			System.out.println("Data not Saved");

@@ -10,11 +10,13 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.rdec.config.SecretReader;
+
 import shadow.org.bson.Document;
 
 public class DatabaseConnection {
 	
-	  static String connectionString = "mongodb+srv://piebytwo014:piebytwo014@cluster0.ide7vos.mongodb.net/?appName=Cluster0";
+	  static String connectionString = SecretReader.readSecrets("MONGO_DB_URI", "en", "US");
 	  static ServerApi serverApi = ServerApi.builder()
 	                .version(ServerApiVersion.V1)
 	                .build();
