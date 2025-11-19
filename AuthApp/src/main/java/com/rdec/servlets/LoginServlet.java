@@ -2,6 +2,7 @@ package com.rdec.servlets;
 
 import java.io.IOException;
 
+import com.rdec.config.SecretReader;
 import com.rdec.database.DatabaseConnection;
 
 import jakarta.servlet.ServletException;
@@ -48,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("Password is invalid");
 			}
 		}else {
-			System.out.println("No Account Found");
+			System.out.println(SecretReader.INFO_LOG("No Account Found"));
 		}		
 	}
 
