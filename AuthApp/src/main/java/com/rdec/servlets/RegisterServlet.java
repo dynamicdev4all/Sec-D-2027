@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.rdec.config.SecretReader;
 import com.rdec.database.DatabaseConnection;
 import com.rdec.helper.EmailOTP;
+import com.rdec.util.JWTUtil;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -42,7 +43,8 @@ public class RegisterServlet extends HttpServlet {
 		
 		if(insertDataStatus) {
 			int O = (int)(Math.random() * 900000)+100000;
-			boolean OTPSentStatus = EmailOTP.sendRegisterOTP(email, firstName + " " + lastName, O);
+			String token = JWTUtil.generateJWT(email, firstName + " " + lastName, O);
+			boolean OTPSentStatus = EmailOTP.sendRegisterOTP(email, firstName + " " + lastName, token);
 			if(OTPSentStatus) { //this value is true if OTP is sent successfully else the value will be false.
 				HttpSession session = request.getSession();
 				session.setAttribute("sentOTP_key", O);

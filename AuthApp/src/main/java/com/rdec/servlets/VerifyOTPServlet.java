@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 import com.rdec.database.DatabaseConnection;
+import com.rdec.util.JWTUtil;
 
 /**
  * Servlet implementation class VerifyOTPServlet
@@ -30,6 +31,8 @@ public class VerifyOTPServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String token = request.getParameter("token");
+		JWTUtil.verifyJWT(token);
 		String enteredOTP = request.getParameter("enteredOTP");
 		//HttpSession session = request.getSession(); //this creates a new session
 		HttpSession session = request.getSession(false); //this does not create a new session but returns the old one
