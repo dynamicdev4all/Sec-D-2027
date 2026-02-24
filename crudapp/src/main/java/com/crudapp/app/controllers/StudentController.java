@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crudapp.app.models.StudentModel;
+import com.crudapp.app.models.User;
+import com.crudapp.app.repositories.AuthRepository;
 import com.crudapp.app.repositories.StudentRepository;
 
 @RestController
@@ -19,27 +21,8 @@ public class StudentController {
 //	StudentRepository repo = new StudentRepository();
 	@Autowired
 	StudentRepository repo;
-	
-	@PostMapping("/student/register")
-	public String registerUser(@RequestBody StudentModel newStudent) {
-		try {
-			 repo.createStudent(newStudent);
-			 return "Registration Successful";
-		} catch (Exception e) {
-			return "Registration Failed";
-		}
-		
-	}
-	
-	@PostMapping("/student/login")
-	public String loginUser(@RequestBody Map<String, String> loginUser) {
-		StudentModel user = repo.loginUser(loginUser);
-		if(user != null) {
-			return "Login Success";
-		}else {
-			return "Login Failed";
-		}
-	}
+	@Autowired
+	AuthRepository authRepo;
 	
 	public void updateUser() {
 		

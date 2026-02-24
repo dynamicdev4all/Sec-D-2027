@@ -1,6 +1,6 @@
 package com.crudapp.app.models;
 
-public class StudentModel {
+public class StudentModel extends User{
 	
 	int uid;
 	long rollNo;
