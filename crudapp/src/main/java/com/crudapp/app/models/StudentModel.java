@@ -1,30 +1,46 @@
 package com.crudapp.app.models;
 
-public class StudentModel extends User{
-	
-	int uid;
-	long rollNo;
-	String name;
-	String course;
-	String branch;
+public class StudentModel {
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public boolean isBanned() {
+		return isBanned;
+	}
+
+	public void setBanned(boolean isBanned) {
+		this.isBanned = isBanned;
+	}
+	long id;
+	String name; 
 	String email;
 	String pass;
+	long rollNo;
+	String course;
+	String branch;
+	boolean isBanned;
 	
-	public StudentModel(int uid, long rollNo, String name, String course, String branch, String email, String pass) {
-		this.uid = uid;
+	public StudentModel(long id, long rollNo, String name, String course, String branch, String email, String pass, boolean isBanned) {
+		this.id = id;
 		this.rollNo = rollNo;
 		this.name = name;
 		this.course = course;
 		this.branch = branch;
 		this.email = email;
 		this.pass = pass;
+		this.isBanned = isBanned;
 	}
 	
-	public int getUid() {
-		return uid;
+	public long getUid() {
+		return id;
 	}
 	public void setUid(int uid) {
-		this.uid = uid;
+		this.id = uid;
 	}
 	public String getEmail() {
 		return email;
