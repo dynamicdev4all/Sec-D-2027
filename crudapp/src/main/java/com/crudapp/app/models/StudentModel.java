@@ -25,7 +25,7 @@ public class StudentModel {
 	String branch;
 	boolean isBanned;
 	
-	public StudentModel(long id, long rollNo, String name, String course, String branch, String email, String pass, boolean isBanned) {
+	public StudentModel(long id, long rollNo, String name, String course, String branch, String email, String pass) {
 		this.id = id;
 		this.rollNo = rollNo;
 		this.name = name;
@@ -33,7 +33,7 @@ public class StudentModel {
 		this.branch = branch;
 		this.email = email;
 		this.pass = pass;
-		this.isBanned = isBanned;
+		this.isBanned = false;
 	}
 	
 	public long getUid() {
