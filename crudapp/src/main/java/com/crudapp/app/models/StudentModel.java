@@ -1,6 +1,16 @@
 package com.crudapp.app.models;
 
+import java.util.ArrayList;
+
 public class StudentModel {
+	public ArrayList<Attendance> getAttendanceList() {
+		return attendanceList;
+	}
+
+	public void setAttendanceList(ArrayList<Attendance> attendanceList) {
+		this.attendanceList = attendanceList;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -24,6 +34,7 @@ public class StudentModel {
 	String course;
 	String branch;
 	boolean isBanned;
+	ArrayList<Attendance> attendanceList;
 	
 	public StudentModel(long id, long rollNo, String name, String course, String branch, String email, String pass) {
 		this.id = id;
@@ -34,6 +45,7 @@ public class StudentModel {
 		this.email = email;
 		this.pass = pass;
 		this.isBanned = false;
+		this.attendanceList = new ArrayList<Attendance>();
 	}
 	
 	public long getUid() {
